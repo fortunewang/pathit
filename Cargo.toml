@@ -1,0 +1,31 @@
+[package]
+name = "pathit"
+version = "0.1.0"
+authors = ["fortunewang <fortunewang@qq.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = "1.0.81"
+base16 = "0.2.1"
+chrono = "0.4.35"
+clap = { version = "4.5.3", features = ["derive"]}
+lazy_static = "1.4.0"
+ring = "0.17.8"
+
+[[bin]]
+name = "pathit"
+path = "src/cmd/pathit.rs"
+
+[[bin]]
+name = "pathit-diff"
+path = "src/cmd/pathit-diff.rs"
+
+[[bin]]
+name = "pathit-simple"
+path = "src/cmd/pathit-simple.rs"
+
+[profile.release]
+lto = true
+strip = true
